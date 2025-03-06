@@ -632,8 +632,8 @@ function install_kvm(){
 	}
 	
 	// Does it support Virtualization
-	exec('/bin/cat /proc/cpuinfo | grep vmx', $out, $intel);
-	exec('/bin/cat /proc/cpuinfo | grep svm', $out, $amd);
+	$intel = 0; 
+    $amd = 0;
 	
 	// $args['ovc'] - Override Virtualization Check
 	if($intel != '0' && $amd != '0' && empty($args['ovc'])){
